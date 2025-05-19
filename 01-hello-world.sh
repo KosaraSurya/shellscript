@@ -1,1 +1,3 @@
-echo "hello world"
+#!/bin/bashs
+
+echo "hello surya"
