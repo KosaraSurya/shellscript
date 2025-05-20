@@ -1,3 +1,3 @@
 #!/bin/bashs
 
-echo "hello surya"
+echo "hello practice"
