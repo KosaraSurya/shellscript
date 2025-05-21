@@ -1,11 +1,20 @@
 #!bin/bash
 
-USRID=$(id -u)
+USERID=$(id -u)
 
-if [ $(USRID -ne 0)]
+if [ $(USERID -ne 0)]
 then
     echo "please run as root user"
 else
     echo "running with root access"
-    dnf install mysql
+    dnf install mysql -y
+fi
+
+dnf list installed mysql
+
+if [ $? -ne 0]
+then
+    echo "mysql is not installed, goiing to install now"
+else
+    echo  "mysl is already installed"
 fi
