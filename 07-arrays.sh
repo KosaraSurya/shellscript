@@ -2,6 +2,6 @@
 
 MOVIES=("mallirava" "rangasthalam" "tholiprema")
 
-echo "1st movie was {MOVIES[0]}"
+echo "1st movie was ${MOVIES[0]}"
 
-echo "All movie are {MOVIES[@]}"
+echo "All movie are ${MOVIES[@]}"
