@@ -1,6 +1,6 @@
 #!bin/bash
 
-USRID=(id -u)
+USRID=$(id -u)
 
 if [ $(USRID -ne 0)]
 then
