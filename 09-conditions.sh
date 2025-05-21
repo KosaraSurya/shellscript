@@ -9,7 +9,7 @@ Number=1
 
 if [ $Number -lt 100 ]
 then
-    echo "given number is lessthan 100"
+    echo "given $Number is lessthan 100"
 else
-    ech0 "given number is greater thean 100"
+    ech0 "given $Number is greater thean 100"
 fi
