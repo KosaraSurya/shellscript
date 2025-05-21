@@ -7,7 +7,7 @@ Number=1
 # -eq --> equal
 # -ne --> not equal
 
-if($Number -lt 100)
+if [ $Number -lt 100 ]
 then
     echo "given number is lessthan 100"
 else
