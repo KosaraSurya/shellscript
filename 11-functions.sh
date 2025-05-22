@@ -43,6 +43,6 @@ then
 else
     echo "python is not installed, goint to install now"
 
-    dnf install python3
+    dnf install python3 -y
     VALIDATE $? "python3"
 fi
