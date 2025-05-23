@@ -10,6 +10,7 @@ N="\e[0m"
 if [USERID -ne 0]
 then
     echo -e "$R ERROR : Please process with root access $N"
+    exit 1
 else
     echo -e "$G access granted please procees $N"
 fi
@@ -18,6 +19,7 @@ Validate(){
     if [ $1 -ne 0 ]
     then
         echo -e "$R ERROR : installation was failed $N"
+        exit 1
     else
         echo -e "$G installatio was successful $N"
     fi
