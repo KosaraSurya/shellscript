@@ -9,6 +9,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOG_FOLDER    #-p will check whether dir is there or not, if it not exits it will create the folder.
+echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]
 then
@@ -24,7 +25,7 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ] 
     then
-        echo -e "$R ERROR : $2 installation was failed please check $N" | tee -a $LOG_FILE 
+        echo -e "$R ERROR : $2 installation was failed please check $N" | tee -a $LOG_FILE
         exit 1
     else
         echo -e "$G $2 installation was successful $N"
@@ -35,7 +36,7 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo -e "$Y mysql is not instlled,please proceed to install $N"
-    dnf install mysql -y | tee -a $LOG_FILE 
+    dnf install mysql -y | tee -a $LOG_FILE
     VALIDATE $? "MYSQL"
 else
     echo -e "$G mysql is already installed $N"
