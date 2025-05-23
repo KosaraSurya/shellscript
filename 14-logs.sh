@@ -8,6 +8,8 @@ LOG_FOLDER=/var/log/shellpractice
 SCRIPT_NAME=$(echo $0 | cut -d "." f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
+mkdir -p $LOG_FOLDER    #-p will check whether dir is there or not, if it not exits it will create the folder.
+
 if [ $USERID -ne 0 ]
 then
     echo -e "$R ERROR : Please proceed with root acccess$N"
