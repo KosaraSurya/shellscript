@@ -23,7 +23,7 @@ Validate(){
     fi
 }
 
-dnf list mysql
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo -e "$R ERROR : mysql is not installed $N"
@@ -33,7 +33,7 @@ else
     echo -e "$G mysql is already installled $N"
 fi
 
-dnf list python3
+dnf list installed python3
 if [ $? -ne 0 ]
 then
      echo -e "$R ERROR : python3 is not installed $N"
@@ -41,3 +41,4 @@ then
      VALIDATE $? "python3"
 else
     echo -e "$G python3 is already installled $N"
+fi
