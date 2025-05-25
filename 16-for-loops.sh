@@ -21,7 +21,7 @@ else
 fi
 
 # validate functions takes input as exit status, what command they tried to install
-Validate(){
+VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e "$R ERROR : installation was failed $N"
