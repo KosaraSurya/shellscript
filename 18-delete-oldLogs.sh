@@ -29,7 +29,7 @@ VALIDATE(){
 
 mkdir -p $LOG_FOLDER
 
-FILES_TO_DELETE=$(find $SCRIPT_DIR -name"*.log" -mtime +14) | tee -a $LOG_FILE
+FILES_TO_DELETE=$(find $SCRIPT_DIR -name "*.log" -mtime +14) | tee -a $LOG_FILE
 VALIDATE $? "deleting old log files"
 
 while IFS= read -r filepath
