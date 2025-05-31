@@ -9,6 +9,7 @@ N="\e[0m"
 LOG_FOLDER="/var/log/app-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+Source_Dir=/home/ec2-user/app-logs
 
 if [ $User_id -ne 0 ]
 then
@@ -28,7 +29,7 @@ VALIDATE(){
 
 mkdir -p $LOG_FOLDER
 
-FILES_TO_DELETE=$(find . -name"*.log" -mtime +14) | tee -a $LOG_FILE
+FILES_TO_DELETE=$(find $SCRIPT_DIR -name"*.log" -mtime +14) | tee -a $LOG_FILE
 VALIDATE $? "deleting old log files"
 
 while IFS= read -r filepath
