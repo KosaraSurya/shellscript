@@ -9,7 +9,7 @@ N="\e[0m"
 LOG_FOLDER="/var/log/app-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
-Source_Dir=/home/ec2-user/app-logs
+Source_Dir=/home/ec2-user
 
 if [ $User_id -ne 0 ]
 then
