@@ -1,10 +1,10 @@
 #!bin/bash
 
-Number=10
-while [ $Number -lt 30 ]
+a=10
+while [ $a -lt 30 ]
 do
-    echo $Number
-    Number='expr $Number+1'
+    echo $a
+    a='expr $a + 1'
 done
 
 
