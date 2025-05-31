@@ -8,7 +8,7 @@ failure(){
     echo "failed at $1 $2"
 }
 
-trap 'failure "${LINENO}" "{BASH_COMMAND}"' ERR
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
 
 #Here LINENO, BASH_COMMAND are special variables and ERR is the error signal
 
