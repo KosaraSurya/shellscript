@@ -34,6 +34,6 @@ VALIDATE $? "deleting old log files"
 while IFS= read -r filepath
 do
     rm -rf $filepath
-done >>> $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
 
 echo -e "$G SUCCESS:: Script executes successfully$N"
