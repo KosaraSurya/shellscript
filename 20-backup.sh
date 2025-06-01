@@ -37,7 +37,7 @@ USAGE(){
     exit 1
 }
 
-if [ $# -lt 2 ]
+if [ $# -lt 2 ] # $# is a special variable, Used to check lenght of the arguements
 then
     USAGE
 else
@@ -52,7 +52,7 @@ else
     exit 1
 fi
 
-if [ -d $DEST_DIR ]
+if [ -d $DEST_DIR ] #-d is used to check whether the directory is available or not
 then
     eco -e "$G Destination directory:$DEST_DIR is available"
 else
@@ -62,12 +62,12 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ ! -z "$FILES" ]
+if [ ! -z "$FILES" ] #-z is used to check whether directory is empty or not
 then
     echo "Files to zip are: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" #ZIP command is used to zip the files
     if [ -f $ZIP_FILE ]
     then
         echo -e "Successfully created Zip file"
