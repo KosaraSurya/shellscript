@@ -46,7 +46,7 @@ fi
 
 if [ -d $SOURCE_DIR ]
 then
-    eco -e "$G source directory:$SOURCE_DIR is available"
+    echo -e "$G source directory:$SOURCE_DIR is available"
 else
     echo -e "$R ERROR::source directory:$SOURCE_DIR is not available"
     exit 1
@@ -54,7 +54,7 @@ fi
 
 if [ -d $DEST_DIR ] #-d is used to check whether the directory is available or not
 then
-    eco -e "$G Destination directory:$DEST_DIR is available"
+    echo -e "$G Destination directory:$DEST_DIR is available"
 else
     echo -e "$R ERROR::Destination directory:$DEST_DIR is not available"
     exit 1
