@@ -11,7 +11,10 @@ Y="\e[33m"
 N="\e[0m"
 LOG_FOLDER="/var/log/app-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+#LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOG_FOLDER/backup.log" 
+#while doin script as command we dont have script name along with sh extension.
+#So 13 line may be get failed so here we directly given the name for log file.
 
 
 mkdir -p $LOG_FOLDER
